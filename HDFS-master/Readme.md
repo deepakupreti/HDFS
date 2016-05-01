@@ -1,5 +1,7 @@
 How to setup
 
+-->Import the protobuf jar initially
+
 Phase1  // it will include getting, putting and listing the files present in Hdfs 
 1) Run the NameNode.java as a server.
 2) Now run the DataNode.java in one or multiple machines.
