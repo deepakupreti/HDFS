@@ -6,6 +6,7 @@ Phase1  // it will include getting, putting and listing the files present in Hdf
 	->DataNode.java will read DataConfig file to get the given information.
 		DataNode_Id Self_Ip DataNodePort path of outputfolder(where the Hdfs files are stored) NameNode_Ip	
 		eg: 1 192.168.43.231 15000 /home/ankur/DATA 192.168.43.231
+	->DataNode on startup sends its IP address and the blocks assigned to it,  to NameNode and it will be inserted in hashmap. 
 
 3) Run Client.java
    -> client can give any of the four commands
@@ -16,7 +17,9 @@ Phase1  // it will include getting, putting and listing the files present in Hdf
  Important Points:
  -> File LastIndex helps us in tracking the last alloted block numbers in hdfd. Upon client log off the last writen block name is written          to 	    the file. Initialy it will contain '0' without quotes. 
 -> File BlockMap will contain the names of files currently in hdfs along with their block numbers.
-
+   eg :ex:(iitb:31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,)
+->If some error come <127.0.0.1 connecion refused ,,somehing like this> so in terminal type sudo /etc/hosts
+     change the ip of ur system in file from 127.0.0.1 to the current ip u got using ifconfig command
 --------------------------
 
 Phase2 // It will will perform mapper and recuder operations on the files present in Hdfs. If the filename given by user is not present in hdfs than the mapper reducer will not work.
